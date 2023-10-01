@@ -1,12 +1,40 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {file_table: files}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+package_name: showvik_bq_test
 allow_embedding: false
-package_name: Rally_App_1
-name: Rally App 1
-startup_form: Form1
-native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap"
-    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+name: showvik-bq-test
 runtime_options:
   version: 2
   client_version: '3'
   server_version: python3-sandbox
   server_spec: {base: python310-standard}
-services: []
+startup_form: Form1
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+db_schema:
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: file_version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: Files
+secrets:
+  argolis-test-service-account-project-owner:
+    value: {RAXXVH2VRA2UHNUJ: 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}
+    type: secret

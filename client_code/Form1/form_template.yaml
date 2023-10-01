@@ -7,4 +7,14 @@ components:
   properties: {col_widths: '{}'}
   name: column_panel_1
   layout_properties: {slot: default}
-  components: []
+  components:
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'LTRLQS,NMVHRI'}
+    components:
+    - type: RichText
+      properties: {}
+      name: rich_text_1
+      layout_properties: {grid_position: 'THKBRV,KBIZBM'}
+      event_bindings: {show: rich_text_1_show}
